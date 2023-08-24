@@ -22,6 +22,10 @@ Display Results: At the end of the quiz, users will receive a summary of their p
 
 
 
+![img](Game.png)
+![img](Homepage.png)
+
+
 **In addition, this project will include:**
 
 Responsive Design: The application will be designed with responsiveness in mind, ensuring an optimal user experience across various devices and screen sizes.
