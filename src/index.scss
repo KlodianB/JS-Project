@@ -1,5 +1,12 @@
-@import "./styles/example.scss";
+// @import "./styles/example.scss";
 
 #main {
-    color: $color;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    margin-top: 7.5%;
+    height: 600px;
+    width: 1000px;
+    border: 5px solid black;
 }

@@ -1,9 +1,9 @@
-import Example from "./scripts/example";
+// import Example from "./scripts/example";
 
 
-document.addEventListener("DOMContentLoaded", function() {
-    console.log("Hello World!");
+// document.addEventListener("DOMContentLoaded", function() {
+//     console.log("Hello World!");
 
-    const main = document.getElementById("main");
-    new Example(main);
-});
+//     const main = document.getElementById("main");
+//     new Example(main);
+// });
