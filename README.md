@@ -21,7 +21,7 @@ Track Score: As users progress through the quiz, the application will keep track
 Display Results: At the end of the quiz, users will receive a summary of their performance, including the total score, the number of correct and incorrect answers, and an evaluation of their quiz-taking skills.
 
 
-
+## Wireframes
 ![img](Game.png)
 ![img](Homepage.png)
 
@@ -39,6 +39,9 @@ User Authentication: To provide a personalized experience, users can create acco
 Leaderboard: The application will feature a leaderboard that displays the top scores achieved by different players. Users can see how their scores compare to those of other players, fostering a sense of competition and encouraging replayability. The leaderboard will showcase the usernames or avatars of top players, along with their respective scores and quiz performance statistics. This feature adds a social and competitive element to the game, enhancing user engagement and motivation to improve their quiz-taking skills.
 
 By implementing these functionalities, the JavaScript Quiz Game aims to create an engaging and user-friendly experience for players who seek both entertainment and education. The combination of customizable options, varied categories, and a user-friendly interface will make the game appealing to a wide audience.
+
+
+## Technologies, Libraries, APIs
 
 
 ## Timeline
