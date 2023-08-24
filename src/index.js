@@ -1,5 +1,6 @@
 import Example from "./scripts/example";
 
+
 document.addEventListener("DOMContentLoaded", function() {
     console.log("Hello World!");
 

@@ -46,27 +46,29 @@ By implementing these functionalities, the JavaScript Quiz Game aims to create a
 
 ## Timeline
 
-1. **Day 1: Planning and Setup**
-   - Spend time defining the game's flow, user interface, and how questions will be displayed.
-   - Set up your development environment, including a code editor and browser for testing.
+1. **Day 1: Project Setup and Basic UI**
+   - Set up your local and remote repository on GitHub.
+   - Create the basic HTML structure for your quiz game.
+   - Style the UI using CSS, focusing on a simple and functional design.
+   - Implement a basic UI manager class to handle UI updates.
 
-2. **Day 2: API Integration and Basic UI**
-   - Learn how to make API requests using JavaScript's `fetch` or other libraries.
-   - Write code to fetch questions from the API based on user-selected categories and difficulty.
-   - Create a basic UI layout using HTML and CSS for category selection and displaying questions.
+2. **Day 2: Fetching Questions and Quiz Logic**
+   - Implement the DataManager class methods to fetch questions from the API.
+   - Create the Question and Category classes based on your data structure.
+   - Develop the Quiz class with methods to start the quiz, fetch questions, and track user progress.
 
-3. **Day 3: Game Logic and Question Display**
-   - Implement the game logic to track user selections, handle correct/incorrect answers, and calculate scores.
-   - Write JavaScript functions to display questions and options dynamically on the page.
-   - Test the basic functionality of fetching questions and displaying them.
+3. **Day 3: Quiz Functionality and Leaderboard**
+   - Finish implementing quiz logic, including presenting questions and handling user answers.
+   - Work on the Leaderboard class to manage leaderboard data.
+   - Implement the basic leaderboard UI in the UIManager class.
 
-4. **Day 4: User Experience and Styling**
-   - Focus on improving the user experience, making sure the game is easy to navigate and use.
-   - Apply CSS styles to enhance the visual appearance of the game.
-   - Test the game thoroughly, including different scenarios and edge cases.
+4. **Day 4: User Interface and Styling**
+   - Polish the user interface, making sure questions, options, and scores are displayed properly.
+   - Enhance user experience with visual cues for correct and incorrect answers.
+   - Complete the styling of the leaderboard section in the UI.
 
-5. **Day 5: Testing, Bug Fixing, and Finalization**
-   - Spend time testing the game extensively to identify and fix any bugs or issues.
-   - Fine-tune the styling and layout for a polished look.
-   - If time allows, consider adding extra features like a timer, hints, or a review of answered questions.
-   - Document your code and project.
+5. **Day 5: Testing, Documentation, and Deployment**
+   - Test your game thoroughly to identify and fix any bugs or issues.
+   - Write clear and concise instructions in your README file.
+   - Deploy your game to a web hosting service (e.g., GitHub Pages, Netlify).
+   - Double-check everything, play the game one final time, and make any necessary last-minute adjustments.
