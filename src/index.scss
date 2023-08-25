@@ -3,10 +3,62 @@
 #main {
     position: relative;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
     margin: 0 auto;
     margin-top: 7.5%;
     height: 600px;
     width: 1000px;
     border: 5px solid black;
+}
+
+#gameTitle {
+    font-size: 30px;
+    display: flex;
+    margin-top: 20px;
+    width: 300px;
+    height: 50px;
+    justify-content: center;
+    align-items: center;
+    border: 5px solid black;;
+}
+
+#gameMenu {
+    background-color: aqua;
+    width: 150px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    border: 2px solid black;
+}
+
+#menu {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#randomFact {
+    margin-bottom: 20px;
+    border: 2px solid black;
+}
+
+#startButton {
+
+    font-size: 20px;
+    margin-bottom: 40px;
+}
+
+// #settingsButton {
+
+// }
+
+#leaderboard {
+
+    margin-top: 40px;
 }
