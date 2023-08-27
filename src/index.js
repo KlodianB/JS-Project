@@ -19,7 +19,7 @@ async function fetchQuestions(num, difficulty, cat) {
 document.addEventListener("DOMContentLoaded", function() {
     const startButton = document.getElementById("startButton");
     startButton.addEventListener("click", function() {
-        fetchQuestions(4, "easy")
+        fetchQuestions(5, "easy")
     })
     const settingsButton = document.getElementById("settingsButton")
     settingsButton.addEventListener("click", function(){

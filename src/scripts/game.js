@@ -15,7 +15,7 @@ export class Game {
             this.renderQuestion();
         } else {
             const main = document.getElementById("main");
-            main.innerText = `Game over! You got ${this.score} out of 10 questions correct!`
+            main.innerText = `Game over! You got ${this.score} out of 5 questions correct!`
         }
     }
 
@@ -24,18 +24,21 @@ export class Game {
         main.innerHTML = "";
 
         const questionContainer = document.createElement("div");
-        questionContainer.innerText = this.currentQuestionSet.question;
+        questionContainer.setAttribute("id", "questionContainer");
+        questionContainer.innerText = JSON.stringify(this.currentQuestionSet.question);
         main.appendChild(questionContainer);
 
         const answersContainer = document.createElement("div");
+        answersContainer.setAttribute("id", "answersContainer");
         const answers = this.currentQuestionSet.shuffledAnswers();
 
         for (let i = 0; i < answers.length; i++) {
             const answer = answers[i];
             let answerButton = document.createElement("button");
+            answerButton.setAttribute("id", `answer${i}`)
             answerButton.innerText = answer;
             answerButton.addEventListener("click", () => this.answerResult(answer))
-            // answersContainer.appendChild(answerButton);
+            answersContainer.appendChild(answerButton);
         }
 
         main.appendChild(answersContainer);
@@ -44,6 +47,9 @@ export class Game {
     answerResult(answer){
         if (answer === this.currentQuestionSet.rightAnswer) {
             this.score += 1
+            console.log("Correct!")
+        }else {
+            console.log("incorrect!")
         }
         this.nextQuestion();
     }
@@ -52,18 +58,3 @@ export class Game {
 
 
 
-
-
-
-
-
-
-
-
-
-
-// questionSet.forEach(element => {
-//     this.questions.push(element[question])
-//     this.answers.push(element[incorrect_answers])
-//     this.correct_answers.push[element[this.correct_answer]]
-// });
