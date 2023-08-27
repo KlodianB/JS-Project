@@ -14,6 +14,18 @@ export class QuestionSet{
         return allAnswers;
     }
 
+    decodedQuestion() {
+        let txt = document.createElement("textarea");
+        txt.innerHTML = this.question;
+        return txt.value;
+    }
+
+    decodedAnswer(answer) {
+        let txt = document.createElement("textarea");
+        txt.innerHTML = answer;
+        return txt.value
+    }
+
 }
  
 

@@ -13,9 +13,6 @@ async function fetchQuestions(num, difficulty, cat) {
     new Game(questions.results);
 }
 
-
-
-
 document.addEventListener("DOMContentLoaded", function() {
     const startButton = document.getElementById("startButton");
     startButton.addEventListener("click", function() {
@@ -38,16 +35,14 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 
-// console.log(print())
+
+
+
+
+
+
 
 // https://opentdb.com/api.php?amount=10&category=9&difficulty=easy&type=multiple
-
-
-
-
-
-
-
 
 // async function fetchQuestions(num, difficulty, cat) {
 //     let url = `https://opentdb.com/api.php?`

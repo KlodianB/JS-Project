@@ -29,7 +29,7 @@ export class Game {
 
         const questionContainer = document.createElement("div");
         questionContainer.setAttribute("id", "questionContainer");
-        questionContainer.innerText = JSON.stringify(this.currentQuestionSet.question);
+        questionContainer.innerText = this.currentQuestionSet.decodedQuestion();
         main.appendChild(questionContainer);
 
         const answersContainer = document.createElement("div");
@@ -40,7 +40,7 @@ export class Game {
             const answer = answers[i];
             let answerButton = document.createElement("button");
             answerButton.setAttribute("id", `answer${i}`)
-            answerButton.innerText = answer;
+            answerButton.innerText = this.currentQuestionSet.decodedAnswer(answer);
             answerButton.addEventListener("click", () => this.answerResult(answer))
             answersContainer.appendChild(answerButton);
         }
@@ -49,7 +49,7 @@ export class Game {
     }
 
     answerResult(answer){
-        if (answer === this.currentQuestionSet.rightAnswer) {
+        if (answer === this.currentQuestionSet.decodedAnswer(this.currentQuestionSet.rightAnswer)) {
             this.score += 1
             console.log("Correct!")
         }else {
@@ -57,6 +57,7 @@ export class Game {
         }
         this.nextQuestion();
     }
+
 
 }
 
