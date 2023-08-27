@@ -1,4 +1,5 @@
 // import Example from "./scripts/example";
+    import { Game } from "./scripts/game"
 
 async function fetchQuestions(num, difficulty, cat) {
     let url = `https://opentdb.com/api.php?`
@@ -9,25 +10,58 @@ async function fetchQuestions(num, difficulty, cat) {
     }
     const res = await fetch(url);
     const questions = await res.json();
-    console.log(questions.results[0].question);
-    const main = document.getElementById("main");
-    main.innerText = questions.results[0].question;
-    // fetch(url).then(res => { res.json() }).then(questions => console.log(questions))
+    new Game(questions.results);
 }
 
-document.addEventListener("DOMContentLoaded", function() {
-    console.log("Hello World!");
-    const startButton = document.getElementById("startButton");
-    startButton.document.addEventListener("click", )
 
-    // const main = document.getElementById("main");
-    // new Example(main);
-    // fetchQuestions(4, "easy")
+
+
+document.addEventListener("DOMContentLoaded", function() {
+    const startButton = document.getElementById("startButton");
+    startButton.addEventListener("click", function() {
+        fetchQuestions(4, "easy")
+    })
+    const settingsButton = document.getElementById("settingsButton")
+    settingsButton.addEventListener("click", function(){
+        const main = document.getElementById("main");
+        main.innerText = "I hate my life"
+    })
+    const leaderboard = document.getElementById("leaderboard")
+    leaderboard.addEventListener("click", function(){
+        const main = document.getElementById("main")
+        main.innerText = "you're a moron if you thought this would work"
+    })
 });
 
 
-// fetchQuestions(4, "easy")
 
+
+
+
+// console.log(print())
+
+// https://opentdb.com/api.php?amount=10&category=9&difficulty=easy&type=multiple
+
+
+
+
+
+
+
+
+// async function fetchQuestions(num, difficulty, cat) {
+//     let url = `https://opentdb.com/api.php?`
+//     if (cat) {
+//         url += `amount=${num}&category=${cat}&difficulty=${difficulty}&type=multiple`
+//     } else {
+//         url += `amount=${num}&difficulty=${difficulty}&type=multiple`
+//     }
+//     const res = await fetch(url);
+//     const questions = await res.json();
+//     return questions.results;
+// };
+
+// fetchQuestions(4, "easy").then(results => console.log(results))
 
 
 
