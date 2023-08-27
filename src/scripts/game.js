@@ -15,7 +15,11 @@ export class Game {
             this.renderQuestion();
         } else {
             const main = document.getElementById("main");
-            main.innerText = `Game over! You got ${this.score} out of 5 questions correct!`
+            const gameOver = document.createElement("div");
+            gameOver.setAttribute("id", "gameOver")
+            main.innerHTML = "";
+            gameOver.innerText = `Game over! You got ${this.score} out of 5 questions correct!`;
+            main.appendChild(gameOver);
         }
     }
 
