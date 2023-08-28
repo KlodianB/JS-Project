@@ -29,9 +29,10 @@ document.addEventListener("DOMContentLoaded", function() {
     closeModal.addEventListener("click", function(){
         const modalContainer = document.getElementById("modalContainer")
         const modal = document.getElementById("modal")
-        modal.style.animation = "fadeOut 0.5s ease-out forwards";
+        // modal.style.animation = "fadeOut 0.5s ease-out forwards";
         modal.style.display = "none";
-        modalContainer.style.animation = "fadeOut 0.5s";
+        modalContainer.style.display = "none";
+        // modalContainer.style.animation = "fadeOut 0.5s";
     })
 
     const customGame = document.getElementById("customGame");
