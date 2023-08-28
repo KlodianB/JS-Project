@@ -49,8 +49,8 @@ document.addEventListener("DOMContentLoaded", function() {
         customModal.style.display = "none";
     })
 
-    const startCusom = document.getElementById("customStart");
-    startCusom.addEventListener("click", function() {
+    const startCustom = document.getElementById("customStart");
+    startCustom.addEventListener("click", function() {
         const numQuestions = document.getElementById("amtQuestions").value || 5;
         const difficulty = document.getElementById("difficulty").value || "easy";
         const cat = document.getElementById("category").value || 9;

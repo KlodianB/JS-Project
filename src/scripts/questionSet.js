@@ -26,6 +26,12 @@ export class QuestionSet{
         return txt.value
     }
 
+    decodedRightAnswer() {
+        let txt = document.createElement("textarea");
+        txt.innerHTML = this.rightAnswer;
+        return txt.value
+    }
+
 }
  
 
