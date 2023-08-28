@@ -1,4 +1,5 @@
 import { QuestionSet } from "./questionSet"
+import { fetchQuestions } from "../index.js"
 
 export class Game {
     constructor(dataset){
@@ -30,7 +31,13 @@ export class Game {
                 question.innerText = `${this.incorrectQuestions[i]}`
                 wrongQuestions.appendChild(question)
             }
+            const playAgain = document.createElement("button");
+            playAgain.innerText = "Play Again";
+            playAgain.addEventListener("click", () => {
+                fetchQuestions(5, "easy");
+            })
             main.appendChild(gameOver);
+            main.appendChild(playAgain);
             main.appendChild(wrongQuestions);
         }
     }

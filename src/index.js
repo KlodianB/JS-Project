@@ -1,7 +1,7 @@
 // import Example from "./scripts/example";
     import { Game } from "./scripts/game"
 
-async function fetchQuestions(num, difficulty, cat) {
+export async function fetchQuestions(num, difficulty, cat) {
     let url = `https://opentdb.com/api.php?`
     if (cat) {
         url += `amount=${num}&category=${cat}&difficulty=${difficulty}&type=multiple`
