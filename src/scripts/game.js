@@ -5,6 +5,7 @@ export class Game {
         this.dataset = dataset;
         this.currentQuestionSet = null
         this.score = 0;
+        this.incorrectQuestions = [];
         this.nextQuestion();
     }
 
@@ -16,10 +17,21 @@ export class Game {
         } else {
             const main = document.getElementById("main");
             const gameOver = document.createElement("div");
+            const wrongQuestions = document.createElement("div");
+            wrongQuestions.setAttribute("id", "wrongQuestions")
             gameOver.setAttribute("id", "gameOver")
             main.innerHTML = "";
             gameOver.innerText = `Game over! You got ${this.score} out of 5 questions correct!`;
+            const wrongAnswers = document.createElement("strong");
+            wrongAnswers.innerText = "These are the questions you answered incorrectly:"
+            wrongQuestions.appendChild(wrongAnswers);
+            for (let i = 0; i < this.incorrectQuestions.length; i++) {
+                const question = document.createElement("div");
+                question.innerText = `${this.incorrectQuestions[i]}`
+                wrongQuestions.appendChild(question)
+            }
             main.appendChild(gameOver);
+            main.appendChild(wrongQuestions);
         }
     }
 
@@ -53,6 +65,7 @@ export class Game {
             this.score += 1
             console.log("Correct!")
         }else {
+            this.incorrectQuestions.push(this.currentQuestionSet.decodedQuestion())
             console.log("incorrect!")
         }
         this.nextQuestion();

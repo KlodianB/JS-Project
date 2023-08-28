@@ -60,6 +60,7 @@
 
 #questionContainer {
   text-align: center;
+  padding: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -81,4 +82,12 @@
 #gameOver {
   margin: auto;
   font-size: 40px;
+}
+
+#wrongQuestions {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
 }

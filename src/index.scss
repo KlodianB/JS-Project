@@ -1,6 +1,7 @@
 // @import "./styles/example.scss";
 
 #main {
+    // background-image: url(../quiz-2192590_1280\ \(1\).jpg);
     position: relative;
     display: flex;
     flex-direction: column;
@@ -62,6 +63,7 @@
 
 #questionContainer {
     text-align: center;
+    padding: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -84,3 +86,12 @@
     margin: auto;
     font-size: 40px;
 }
+
+#wrongQuestions {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+
