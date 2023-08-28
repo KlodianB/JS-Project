@@ -28,9 +28,9 @@ document.addEventListener("DOMContentLoaded", function() {
     const closeModal = document.getElementById("closeModal");
     closeModal.addEventListener("click", function(){
         const modalContainer = document.getElementById("modalContainer")
-        const modal = document.getElementById("modal")
+        // const modal = document.getElementById("modal")
         // modal.style.animation = "fadeOut 0.5s ease-out forwards";
-        modal.style.display = "none";
+        // modal.style.display = "none";
         modalContainer.style.display = "none";
         // modalContainer.style.animation = "fadeOut 0.5s";
     })
@@ -51,18 +51,16 @@ document.addEventListener("DOMContentLoaded", function() {
 
     const startCusom = document.getElementById("customStart");
     startCusom.addEventListener("click", function() {
-        fetchQuestions(5, "easy", 9)
+        const numQuestions = document.getElementById("amtQuestions").value || 5;
+        const difficulty = document.getElementById("difficulty").value || "easy";
+        const cat = document.getElementById("category").value || 9;
+        fetchQuestions(numQuestions, difficulty, cat);
+        console.log(cat);
+        console.log(numQuestions);
+        console.log(difficulty);
     })
 
 });
-
-
-
-
-
-
-
-
 
 
 

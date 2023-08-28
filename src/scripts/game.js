@@ -5,9 +5,10 @@ export class Game {
     constructor(dataset){
         this.dataset = dataset;
         this.currentQuestionSet = null
-        this.score = 0;
         this.incorrectQuestions = [];
         this.correctAnswers = [];
+        this.score = 0;
+        this.counter = 0;
         this.nextQuestion();
     }
 
@@ -53,7 +54,7 @@ export class Game {
             wrongQuestions.setAttribute("id", "wrongQuestions")
             gameOver.setAttribute("id", "gameOver")
             main.innerHTML = "";
-            gameOver.innerText = `Game over! You got ${this.score} out of 5 questions correct!`;
+            gameOver.innerText = `Game over! You got ${this.score} out of ${this.counter} questions correct!`;
             const wrongAnswers = document.createElement("strong");
             wrongAnswers.innerText = "These are the questions you answered incorrectly:"
             wrongQuestions.appendChild(wrongAnswers);
@@ -73,7 +74,7 @@ export class Game {
             mainMenu.setAttribute("id", "mainMenu")
             mainMenu.innerText = "Main Menu"
             mainMenu.addEventListener("click", function() {
-                nothing;
+                location.reload();
             })
             main.appendChild(gameOver);
             main.appendChild(playAgain);
@@ -83,12 +84,12 @@ export class Game {
 
     answerResult(answer){
         if (answer === this.currentQuestionSet.decodedAnswer(this.currentQuestionSet.rightAnswer)) {
-            this.score += 1
-            console.log("Correct!")
+            this.score += 1;
+            this.counter += 1;
         }else {
             this.incorrectQuestions.push(this.currentQuestionSet.decodedQuestion())
-            console.log("incorrect!")
-            this.correctAnswers.push(this.currentQuestionSet.decodedAnswer(this.currentQuestionSet.rightAnswer))
+            this.counter += 1;
+            this.correctAnswers.push(this.currentQuestionSet.decodedAnswer(this.currentQuestionSet.rightAnswer));
         }
         this.nextQuestion();
     }
