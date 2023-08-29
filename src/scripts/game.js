@@ -55,6 +55,11 @@ export class Game {
             answerButton.innerText = this.currentQuestionSet.decodedAnswer(answer);
             answerButton.addEventListener("click", () => this.answerResult(answerButton.innerText));
             answersContainer.appendChild(answerButton);
+            const hoverAudio = new Audio();
+            hoverAudio.src = "../audio/click-for-game-menu-131903.mp3"
+            answerButton.addEventListener("mouseover", function() {
+            hoverAudio.play();
+        });
         }
 
         main.appendChild(answersContainer);
@@ -94,7 +99,7 @@ export class Game {
                 <div id="gameMenu">
                   <button id="startButton">Demo</button>
                   <button id="customGame">Custom Game</button>
-                  <button id="instructions">Instructions</button>
+                  <button id="instructions">About</button>
                 </div>
                 <div id="customModal">
                   <div id="customMenu">
@@ -217,6 +222,31 @@ export class Game {
                         window.cat = document.getElementById("category").value || 9;
                         fetchQuestions(window.numQuestions, window.difficulty, window.cat);
                     });
+
+                    // setInterval(() => {
+                    //     fetchRandomFact();
+                    // }, 7500);
+
+
+
+
+                    const buttons = document.getElementsByTagName("button");
+                    for (let i = 0; i < buttons.length; i++) {
+                        const hoverAudio = new Audio();
+                        hoverAudio.src = "../audio/click-for-game-menu-131903.mp3"
+                        const clickAudio = new Audio();
+                        clickAudio.src = "../audio/ping-82822.mp3"
+                        clickAudio.playbackRate=2.5;
+                        const button = buttons[i];
+                        button.addEventListener("mouseover", function() {
+                            hoverAudio.play();
+                        });
+                        button.addEventListener("click", function() {
+                            clickAudio.play();
+                        });
+                    };
+                    const closeModalButton = document.getElementById("closeModal");
+                    closeModalButton.removeEventListener("mouseover");
                 
             });
             main.appendChild(gameOver);

@@ -39,27 +39,27 @@ document.addEventListener("DOMContentLoaded", function() {
 
     const instructions = document.getElementById("instructions");
     instructions.addEventListener("click", function(){
-        const modalContainer = document.getElementById("modalContainer")
-        const modal = document.getElementById("modal")
+        const modalContainer = document.getElementById("modalContainer");
+        const modal = document.getElementById("modal");
         modal.style.animation = "fadeIn 0.5s ease-in forwards";
         modal.style.display = "flex";
         setTimeout(() => {
             modalContainer.style.display = "flex" 
-        }, 250)
+        }, 250);
         modalContainer.style.animation = "fadeIn 0.7s";
     });
 
     const closeModal = document.getElementById("closeModal");
     closeModal.addEventListener("click", function(){
-        const modalContainer = document.getElementById("modalContainer")
-        const modal = document.getElementById("modal")
+        const modalContainer = document.getElementById("modalContainer");
+        const modal = document.getElementById("modal");
         modal.style.animation = "fadeOut 0.5s ease-out forwards";
         modal.style.display = "none";
         setTimeout(() => {
             modalContainer.style.display = "none" 
-        }, 500)
+        }, 500);
         modalContainer.style.animation = "fadeOut 0.7s";
-    })
+    });
 
     const customGame = document.getElementById("customGame");
     customGame.addEventListener("click", function (){
@@ -67,13 +67,13 @@ document.addEventListener("DOMContentLoaded", function() {
         const gameMenu = document.getElementById("gameMenu")
         gameMenu.style.display = "none";
         customModal.style.display = "flex";
-    })
+    });
 
     const backButton = document.getElementById("back");
     backButton.addEventListener("click", function() {
         gameMenu.style.display = "flex";
         customModal.style.display = "none";
-    })
+    });
 
     const startCustom = document.getElementById("customStart");
     startCustom.addEventListener("click", function() {
@@ -82,11 +82,36 @@ document.addEventListener("DOMContentLoaded", function() {
         window.cat = document.getElementById("category").value || 9;
         fetchQuestions(window.numQuestions, window.difficulty, window.cat);
 
-    })
+    });
+
+
 
     // setInterval(() => {
     //     fetchRandomFact();
     // }, 7500);
+
+
+
+
+
+
+    const buttons = document.getElementsByTagName("button");
+    for (let i = 0; i < buttons.length; i++) {
+        const hoverAudio = new Audio();
+        hoverAudio.src = "../audio/click-for-game-menu-131903.mp3"
+        const clickAudio = new Audio();
+        clickAudio.src = "../audio/ping-82822.mp3"
+        clickAudio.playbackRate=2.5;
+        const button = buttons[i];
+        button.addEventListener("mouseover", function() {
+            hoverAudio.play();
+        });
+        button.addEventListener("click", function() {
+            clickAudio.play();
+        });
+    };
+    const closeModalButton = document.getElementById("closeModal");
+    closeModalButton.removeEventListener("mouseover");
 
 });
 
