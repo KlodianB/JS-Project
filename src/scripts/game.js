@@ -26,6 +26,19 @@ export class Game {
         const main = document.getElementById("main");
         main.innerHTML = "";
 
+        const headerContainer = document.createElement("div");
+        headerContainer.setAttribute("id", "headerContainer");
+        const currentQuestionNum = document.createElement("div");
+        currentQuestionNum.setAttribute("id", "currentQuestionNum");
+        currentQuestionNum.innerText = `Question: ${this.counter}`
+
+        const score = document.createElement("div");
+        score.setAttribute("id", "score");
+        score.innerText = `Score: ${this.score}`;
+        headerContainer.appendChild(score);
+        headerContainer.appendChild(currentQuestionNum);
+        main.appendChild(headerContainer);
+
         const questionContainer = document.createElement("div");
         questionContainer.setAttribute("id", "questionContainer");
         questionContainer.innerText = this.currentQuestionSet.decodedQuestion();
@@ -64,11 +77,12 @@ export class Game {
                 question.innerText = `${this.incorrectQuestions[i]} (${this.correctAnswers[i]})`
                 wrongQuestions.appendChild(question)
             }
+
             const playAgain = document.createElement("button");
             playAgain.setAttribute("id", "playAgain");
             playAgain.innerText = "Play Again";
             playAgain.addEventListener("click", () => {
-                fetchQuestions(5, "easy");
+                fetchQuestions(window.numQuestions, window.difficulty, window.cat);
             })
 
             const mainMenu = document.createElement("button");
@@ -78,7 +92,7 @@ export class Game {
                 const main = document.getElementById("main");
                 main.innerHTML = `<div id="gameTitle">Brain Stew</div> 
                 <div id="gameMenu">
-                  <button id="startButton">Start Game</button>
+                  <button id="startButton">Demo</button>
                   <button id="customGame">Custom Game</button>
                   <button id="instructions">Instructions</button>
                 </div>
@@ -143,10 +157,13 @@ export class Game {
                 <div id="randomFact">The Best Trivia Game in the World!</div>
                 <div id="modalContainer">
                     <div id="modal">
-                    Welcome to Brain Stew! <br>To play click the "Start Game" button or select "Custom Game" if you want to choose the category/number of questions you want.
+                    Welcome to Brain Stew! <br>To play click the "Start Game" button or select "Custom Game" if you want to choose the category, number of questions, or difficulty that you want.
                     <button id="closeModal">X</button>
                     </div>
                 </div>`;
+                const modalContainer = document.getElementById("modalContainer");
+                modalContainer.style.display = "none";
+
                     const closeModal = document.getElementById("closeModal");
                     closeModal.addEventListener("click", function(){
                         const modalContainer = document.getElementById("modalContainer")
@@ -158,9 +175,13 @@ export class Game {
                         }, 500)
                         modalContainer.style.animation = "fadeOut 0.7s";
                     })
+
                     const startButton = document.getElementById("startButton");
                     startButton.addEventListener("click", function() {
-                        fetchQuestions(5, "easy", 9)
+                        window.numQuestions = 5;
+                        window.difficulty = "easy";
+                        window.cat = 9;
+                        fetchQuestions(window.numQuestions, window.difficulty, window.cat)
                     });
                 
                     const instructions = document.getElementById("instructions");
@@ -188,16 +209,13 @@ export class Game {
                         gameMenu.style.display = "flex";
                         customModal.style.display = "none";
                     });
-                
+                  
                     const startCustom = document.getElementById("customStart");
                     startCustom.addEventListener("click", function() {
-                        const numQuestions = document.getElementById("amtQuestions").value || 5;
-                        const difficulty = document.getElementById("difficulty").value || "easy";
-                        const cat = document.getElementById("category").value || 9;
-                        fetchQuestions(numQuestions, difficulty, cat);
-                        console.log(cat);
-                        console.log(numQuestions);
-                        console.log(difficulty);
+                        window.numQuestions = document.getElementById("amtQuestions").value || 5;
+                        window.difficulty = document.getElementById("difficulty").value || "easy";
+                        window.cat = document.getElementById("category").value || 9;
+                        fetchQuestions(window.numQuestions, window.difficulty, window.cat);
                     });
                 
             });

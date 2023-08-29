@@ -7,16 +7,16 @@
 }
 
 #main {
-  background-image: url(../wepik-export-20230829134825Mz20.png);
+  background-image: url(../wepik-export-20230829175803xrSI.png);
   position: relative;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
   margin: auto;
-  margin-top: 7.5%;
-  height: 655px;
-  width: 1000px;
+  height: 775px;
+  width: 1187px;
+  border-radius: 10px;
   background-color: green;
 }
 
@@ -28,9 +28,10 @@
   right: 0;
   bottom: 0;
   top: 0;
-  width: 1000px;
-  height: 655px;
-  margin: 7.5% auto;
+  height: 775px;
+  width: 1187px;
+  margin: auto;
+  border-radius: 10px;
   background-color: rgb(0, 0, 0);
   background-color: rgba(0, 0, 0, 0.4);
 }
@@ -68,15 +69,16 @@
 #closeModal {
   display: flex;
   justify-content: center;
+  color: black;
   height: 20px;
   width: 20px;
 }
 
 #gameTitle {
-  font-size: 60px;
+  font-size: 90px;
   display: flex;
-  margin-top: 60px;
-  width: 300px;
+  margin-top: 70px;
+  width: 500px;
   height: 50px;
   justify-content: center;
   align-items: center;
@@ -99,22 +101,12 @@
   align-items: center;
 }
 
-#customModal {
-  display: none;
-  width: 350px;
-  height: 220px;
-  flex-direction: column;
-  justify-content: space-evenly;
-  align-items: center;
-  border: 1px solid black;
-}
-
 #randomFact {
   text-align: center;
   font-size: 25px;
   height: 20px;
   width: 600px;
-  margin-bottom: 150px;
+  margin-bottom: 175px;
   transition: opacity 1s ease;
 }
 
@@ -151,16 +143,17 @@
   text-align: center;
   padding: 10px;
   display: flex;
+  width: 750px;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  font-size: 25px;
-  margin-top: 200px;
+  font-size: 50px;
+  margin-top: 10px;
 }
 
 #answersContainer {
-  width: 600px;
-  height: 150px;
+  width: 900px;
+  height: 200px;
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
@@ -170,10 +163,9 @@
 
 #answer0, #answer1, #answer2, #answer3 {
   background: none;
-  border: 1px solid black;
-  padding: 10px;
+  padding: 15px;
   margin: 10px;
-  font-size: 20px;
+  font-size: 30px;
   cursor: pointer;
 }
 
@@ -191,11 +183,6 @@
   cursor: pointer;
 }
 
-#wrongAnswers {
-  font-size: 20px;
-  text-decoration: underline;
-}
-
 #mainMenu {
   background: none;
   border: 1px solid black;
@@ -205,19 +192,35 @@
   cursor: pointer;
 }
 
+#wrongAnswers {
+  font-size: 30px;
+  text-decoration: underline;
+}
+
 #wrongQuestions {
+  text-align: center;
+  font-size: 25px;
   display: flex;
+  height: 315px;
+  width: 800px;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   margin: auto;
+  overflow: auto;
 }
 
 #startButton:hover,
 #customGame:hover,
 #instructions:hover,
 #playAgain:hover,
-#mainMenu:hover {
+#mainMenu:hover,
+#customStart:hover,
+#back:hover,
+#answer0:hover,
+#answer1:hover,
+#answer2:hover,
+#answer3:hover {
   box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3);
 }
 
@@ -225,7 +228,11 @@
 #customGame,
 #instructions,
 #playAgain,
-#mainMenu {
+#mainMenu,
+#customStart,
+#back {
+  font-size: 35px;
+  width: 250px;
   transition: background-color 0.3s ease-in-out;
   background: linear-gradient(45deg, #AD264C, #FF90AF, #FA5080, #10AD23, #82FA91);
   background-size: 200% 100%;
@@ -244,9 +251,16 @@
 #customGame:hover,
 #instructions:hover,
 #playAgain:hover,
-#mainMenu:hover {
+#mainMenu:hover,
+#customStart:hover,
+#back:hover,
+#answer0:hover,
+#answer1:hover,
+#answer2:hover,
+#answer3:hover {
   background-position: 100% 0%;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  transition: 0.5s;
 }
 
 #customModal {
@@ -256,8 +270,6 @@
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  border: 1px solid black;
-  background-color: #ffffff; /* White background */
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
@@ -273,12 +285,13 @@
 #category,
 #difficulty,
 #amtQuestions {
+  font-family: "Crayone Personal Use Only";
   width: 100%;
-  padding: 10px;
+  padding: 5px;
   border: 1px solid #ccc;
   border-radius: 5px;
   background-color: #f8f8f8;
-  font-size: 16px;
+  font-size: 19px;
   color: #333;
   outline: none;
   transition: border-color 0.3s ease-in-out;
@@ -292,19 +305,12 @@
 
 #customStart,
 #back {
-  background-color: #AD264C;
   color: white;
   border: none;
   padding: 10px 20px;
   border-radius: 5px;
-  font-size: 16px;
+  font-size: 25px;
   cursor: pointer;
-  transition: background-color 0.3s ease-in-out;
-}
-
-#customStart:hover,
-#back:hover {
-  background-color: #FA5080;
 }
 
 #answersContainer button {
@@ -315,4 +321,12 @@
   border: none;
   border-radius: 10px;
   transition: 0.5s ease;
+}
+
+#headerContainer {
+  display: flex;
+  font-size: 20px;
+  justify-content: space-between;
+  width: 1100px;
+  margin-top: 50px;
 }

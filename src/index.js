@@ -23,17 +23,17 @@ export async function fetchQuestions(num, difficulty, cat) {
 
 
         await new Promise(resolve => setTimeout(resolve, 1000)); 
-
         randomFactContainer.innerText = fact.text;
-
         randomFactContainer.style.opacity = 1;
-
         randomFactContainer.innerText = fact.text;
     }
 
 document.addEventListener("DOMContentLoaded", function() {
     const startButton = document.getElementById("startButton");
     startButton.addEventListener("click", function() {
+        window.numQuestions = 5;
+        window.difficulty = "easy";
+        window.cat = 9;
         fetchQuestions(5, "easy", 9)
     });
 
@@ -77,18 +77,16 @@ document.addEventListener("DOMContentLoaded", function() {
 
     const startCustom = document.getElementById("customStart");
     startCustom.addEventListener("click", function() {
-        const numQuestions = document.getElementById("amtQuestions").value || 5;
-        const difficulty = document.getElementById("difficulty").value || "easy";
-        const cat = document.getElementById("category").value || 9;
-        fetchQuestions(numQuestions, difficulty, cat);
-        console.log(cat);
-        console.log(numQuestions);
-        console.log(difficulty);
+        window.numQuestions = document.getElementById("amtQuestions").value || 5;
+        window.difficulty = document.getElementById("difficulty").value || "easy";
+        window.cat = document.getElementById("category").value || 9;
+        fetchQuestions(window.numQuestions, window.difficulty, window.cat);
+
     })
 
-    setInterval(() => {
-        fetchRandomFact();
-    }, 7500);
+    // setInterval(() => {
+    //     fetchRandomFact();
+    // }, 7500);
 
 });
 
@@ -96,22 +94,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 
-
-// https://opentdb.com/api.php?amount=10&category=9&difficulty=easy&type=multiple
-
-// async function fetchQuestions(num, difficulty, cat) {
-//     let url = `https://opentdb.com/api.php?`
-//     if (cat) {
-//         url += `amount=${num}&category=${cat}&difficulty=${difficulty}&type=multiple`
-//     } else {
-//         url += `amount=${num}&difficulty=${difficulty}&type=multiple`
-//     }
-//     const res = await fetch(url);
-//     const questions = await res.json();
-//     return questions.results;
-// };
-
-// fetchQuestions(4, "easy").then(results => console.log(results))
 
 
 
