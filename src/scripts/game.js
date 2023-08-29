@@ -54,8 +54,9 @@ export class Game {
             wrongQuestions.setAttribute("id", "wrongQuestions")
             gameOver.setAttribute("id", "gameOver")
             main.innerHTML = "";
-            gameOver.innerText = `Game over! You got ${this.score} out of ${this.counter} questions correct!`;
+            gameOver.innerText = `Game over!  You got ${this.score} out of ${this.counter} questions correct!`;
             const wrongAnswers = document.createElement("strong");
+            wrongAnswers.setAttribute("id", "wrongAnswers")
             wrongAnswers.innerText = "These are the questions you answered incorrectly:"
             wrongQuestions.appendChild(wrongAnswers);
             for (let i = 0; i < this.incorrectQuestions.length; i++) {
@@ -139,7 +140,7 @@ export class Game {
                     <button id="back">Main Menu</button>
                   </div>
                 </div>
-                <div id="randomFact">BLAHBLALHBLAHBLHABHLABH</div>
+                <div id="randomFact">The Best Trivia Game in the World!</div>
                 <div id="modalContainer">
                     <div id="modal">
                     Welcome to Brain Stew! <br>To play click the "Start Game" button or select "Custom Game" if you want to choose the category/number of questions you want.

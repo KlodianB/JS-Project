@@ -120,8 +120,12 @@
 
 
 #randomFact {
-    margin-bottom: 60px;
-    // border: 2px solid black;
+    text-align: center;
+    font-size: 25px;
+    height: 20px;
+    width: 600px;
+    margin-bottom: 150px;
+    transition: opacity 1s ease;
 }
 
 #startButton {
@@ -200,6 +204,11 @@
     cursor: pointer;
 }
 
+#wrongAnswers {
+    font-size: 20px;
+    text-decoration: underline;
+}
+
 #mainMenu {
     background: none;
     border: 1px solid black;
@@ -242,6 +251,7 @@
     color: white;
     border: none;
     border-radius: 10px; 
+    transition: 0.5s ease;
 }
 
 
@@ -327,42 +337,39 @@
 
 
 
-#questionContainer {
-    text-align: center;
-    padding: 20px;
-    font-size: 28px;
-    margin-top: 100px;
-    color: #AD264C;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
-}
+// #questionContainer {
+//     text-align: center;
+//     padding: 20px;
+//     font-size: 28px;
+//     margin-top: 100px;
+//     color: #AD264C;
+//     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+// }
 
-#answersContainer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 20px;
-}
+// #answersContainer {
+//     display: flex;
+//     flex-direction: column;
+//     align-items: center;
+//     margin-top: 20px;
+// }
 
 #answersContainer button {
-    background-color: #FF90AF;
+    transition: background-color 0.3s ease-in-out;
+    background: linear-gradient(45deg, #AD264C, #FF90AF, #FA5080, #10AD23, #82FA91);
+    background-size: 200% 100%;
     color: white;
     border: none;
-    padding: 12px 24px;
-    margin: 8px;
-    border-radius: 30px;
-    font-size: 18px;
-    cursor: pointer;
-    transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
-    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 10px; 
+    transition: 0.5s ease;
 }
 
-#answersContainer button:hover {
-    background-color: #FA5080;
-    transform: scale(1.05);
-}
+// #answersContainer button:hover {
+//     background-color: #FA5080;
+//     transform: scale(1.05);
+// }
 
 
-#answersContainer button:not(:last-child) {
-    margin-bottom: 15px;
-}
+// #answersContainer button:not(:last-child) {
+//     margin-bottom: 15px;
+// }
 

@@ -13,6 +13,24 @@ export async function fetchQuestions(num, difficulty, cat) {
     new Game(questions.results);
 }
 
+    async function fetchRandomFact() {
+        const url = 'https://uselessfacts.jsph.pl/api/v2/facts/random'
+
+        const res = await fetch(url);
+        const fact = await res.json();
+        const randomFactContainer = document.getElementById("randomFact");
+        randomFactContainer.style.opacity = 0;
+
+
+        await new Promise(resolve => setTimeout(resolve, 1000)); 
+
+        randomFactContainer.innerText = fact.text;
+
+        randomFactContainer.style.opacity = 1;
+
+        randomFactContainer.innerText = fact.text;
+    }
+
 document.addEventListener("DOMContentLoaded", function() {
     const startButton = document.getElementById("startButton");
     startButton.addEventListener("click", function() {
@@ -67,6 +85,10 @@ document.addEventListener("DOMContentLoaded", function() {
         console.log(numQuestions);
         console.log(difficulty);
     })
+
+    setInterval(() => {
+        fetchRandomFact();
+    }, 7500);
 
 });
 
