@@ -79,7 +79,7 @@ export class Game {
                 <div id="gameMenu">
                   <button id="startButton">Start Game</button>
                   <button id="customGame">Custom Game</button>
-                  <button id="settingsButton">Settings</button>
+                  <button id="instructions">Instructions</button>
                 </div>
                 <div id="customModal">
                   <div id="customMenu">
@@ -139,16 +139,39 @@ export class Game {
                     <button id="back">Main Menu</button>
                   </div>
                 </div>
-                <div id="randomFact">BLAHBLALHBLAHBLHABHLABH</div>`;
+                <div id="randomFact">BLAHBLALHBLAHBLHABHLABH</div>
+                <div id="modalContainer">
+                    <div id="modal">
+                    Welcome to Brain Stew! <br>To play click the "Start Game" button or select "Custom Game" if you want to choose the category/number of questions you want.
+                    <button id="closeModal">X</button>
+                    </div>
+                </div>`;
+                    const closeModal = document.getElementById("closeModal");
+                    closeModal.addEventListener("click", function(){
+                        const modalContainer = document.getElementById("modalContainer")
+                        const modal = document.getElementById("modal")
+                        modal.style.animation = "fadeOut 0.5s ease-out forwards";
+                        modal.style.display = "none";
+                        setTimeout(() => {
+                            modalContainer.style.display = "none" 
+                        }, 500)
+                        modalContainer.style.animation = "fadeOut 0.7s";
+                    })
                     const startButton = document.getElementById("startButton");
                     startButton.addEventListener("click", function() {
                         fetchQuestions(5, "easy", 9)
                     });
                 
-                    const settingsButton = document.getElementById("settingsButton");
-                    settingsButton.addEventListener("click", function(){
-                        const main = document.getElementById("main");
-                        main.innerText = "I hate my life"
+                    const instructions = document.getElementById("instructions");
+                    instructions.addEventListener("click", function(){
+                        const modalContainer = document.getElementById("modalContainer")
+                        const modal = document.getElementById("modal")
+                        modal.style.animation = "fadeIn 0.5s ease-in forwards";
+                        modal.style.display = "flex";
+                        setTimeout(() => {
+                            modalContainer.style.display = "flex" 
+                        }, 250)
+                        modalContainer.style.animation = "fadeIn 0.7s";
                     });
                 
                     const customGame = document.getElementById("customGame");
