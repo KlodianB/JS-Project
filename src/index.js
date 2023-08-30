@@ -108,24 +108,27 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     };
 
-    // function mute(el) {
-    //     el.muted = !el.muted;
-    // };
 
+    const music = document.getElementById("music");
+    music.loop = true;
+    music.play();
 
-    // function muteMe(elem) {
-    //     elem.muted = true;
-    //     elem.pause();
-    // }
-    
-    // function mutePage() {
-    //     document.querySelectorAll("video, audio").forEach((elem) => muteMe(elem));
-    // }
+    function mute(el) {
+        el.muted = !el.muted;
+    };
 
-    // const muteButton = document.getElementById("mute");
-    // muteButton.addEventListener("click", function() {
-    //     mutePage();
-    // });
+    const muteButton = document.getElementById("mute");
+    muteButton.addEventListener("click", function() {
+        const music = document.getElementById("music")
+        mute(music);
+        if (music.muted) {
+            const muteIcon = document.getElementById("muteIcon");
+            muteIcon.src = "./icons8-mute-50.png"
+        } else {
+            const muteIcon = document.getElementById("muteIcon");
+            muteIcon.src = "./icons8-sound-on-50.png"
+        }
+    });
 
 });
 

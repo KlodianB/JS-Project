@@ -100,7 +100,8 @@ export class Game {
             mainMenu.innerText = "Main Menu"
             mainMenu.addEventListener("click", function() {
                 const main = document.getElementById("main");
-                main.innerHTML = `<div id="gameTitle">Brain Stew</div> 
+                main.innerHTML = `<audio src="./audio/quiz-game-music-loop-bpm-90-61070.mp3" id="music"></audio>
+                <div id="gameTitle">Brain Stew</div> 
                 <div id="gameMenu">
                   <button id="startButton">Demo</button>
                   <button id="customGame">Custom Game</button>
@@ -171,7 +172,8 @@ export class Game {
                     <button id="closeModal">X</button>
                     Welcome to Brain Stew! <br>Brain Stew is a fun trivia styled game that offers users the opportunity to engage in an educational and entertaining quiz experience. Players can select their preferred categories, set the level of difficulty, and specify the number of questions they want to answer. <br> To play click the "Demo" button to start a demo game or select "Custom Game" if you want to customize your experience. <a href="https://github.com/KlodianB" id="githubLink"><img src="./icons8-github-50.png" id="github"></a>
                   </div>
-                </div>`;
+                  </div>
+                  <button id="mute"><img src="./icons8-sound-on-50.png" id="muteIcon"></button>`;
                 const modalContainer = document.getElementById("modalContainer");
                 modalContainer.style.display = "none";
 
@@ -252,7 +254,28 @@ export class Game {
                             clickAudio.play();
                         });
                     };
-                
+            
+                    const music = document.getElementById("music");
+                    music.loop = true;
+                    music.play();
+
+                    function mute(el) {
+                        el.muted = !el.muted;
+                    };
+
+                    const muteButton = document.getElementById("mute");
+                    muteButton.addEventListener("click", function() {
+                        const music = document.getElementById("music")
+                        mute(music);
+                        if (music.muted) {
+                            const muteIcon = document.getElementById("muteIcon");
+                            muteIcon.src = "./icons8-mute-50.png"
+                        } else {
+                            const muteIcon = document.getElementById("muteIcon");
+                            muteIcon.src = "./icons8-sound-on-50.png"
+                        }
+                    });
+
             });
             main.appendChild(gameOver);
             main.appendChild(playAgain);

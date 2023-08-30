@@ -60,6 +60,7 @@
 #modal #closeModal {
   display: flex;
   align-self: flex-end;
+  cursor: pointer;
 }
 
 @keyframes fadeOut {
@@ -118,7 +119,7 @@
   font-size: 25px;
   height: 20px;
   width: 600px;
-  margin-bottom: 175px;
+  margin-bottom: 50px;
   transition: opacity 1s ease;
 }
 
@@ -360,8 +361,9 @@
 }
 
 #main #mute {
-  display: none;
+  display: flex;
   align-self: flex-end;
   margin-bottom: 20px;
   margin-right: 20px;
+  cursor: pointer;
 }
