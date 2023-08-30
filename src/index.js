@@ -81,7 +81,6 @@ document.addEventListener("DOMContentLoaded", function() {
         window.difficulty = document.getElementById("difficulty").value || "easy";
         window.cat = document.getElementById("category").value || 9;
         fetchQuestions(window.numQuestions, window.difficulty, window.cat);
-
     });
 
 
@@ -91,14 +90,15 @@ document.addEventListener("DOMContentLoaded", function() {
     // }, 7500);
 
 
-
-
-
-
+    
+    
+    
+    
     const buttons = document.getElementsByTagName("button");
     for (let i = 0; i < buttons.length; i++) {
         const hoverAudio = new Audio();
         hoverAudio.src = "../audio/click-for-game-menu-131903.mp3"
+        hoverAudio.playbackRate=1.5;
         const clickAudio = new Audio();
         clickAudio.src = "../audio/ping-82822.mp3"
         clickAudio.playbackRate=2.5;
@@ -110,8 +110,25 @@ document.addEventListener("DOMContentLoaded", function() {
             clickAudio.play();
         });
     };
-    const closeModalButton = document.getElementById("closeModal");
-    closeModalButton.removeEventListener("mouseover");
+
+    // function mute(el) {
+    //     el.muted = !el.muted;
+    // };
+
+
+    // function muteMe(elem) {
+    //     elem.muted = true;
+    //     elem.pause();
+    // }
+    
+    // function mutePage() {
+    //     document.querySelectorAll("video, audio").forEach((elem) => muteMe(elem));
+    // }
+
+    // const muteButton = document.getElementById("mute");
+    // muteButton.addEventListener("click", function() {
+    //     mutePage();
+    // });
 
 });
 

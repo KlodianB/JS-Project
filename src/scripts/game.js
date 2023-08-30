@@ -16,11 +16,15 @@ export class Game {
     nextQuestion() {
         if (this.dataset.length > 0) {
             this.currentQuestionSet = new QuestionSet(this.dataset.shift())
-            this.renderQuestion();
+            setTimeout(() => {
+                this.renderQuestion()
+            }, 750);
         } else {
-            this.renderEndScreen();
-        }
-    }
+            setTimeout(() => {
+                this.renderEndScreen()
+            }, 750);;
+        };
+    };
 
     renderQuestion(){
         const main = document.getElementById("main");
@@ -53,10 +57,11 @@ export class Game {
             let answerButton = document.createElement("button");
             answerButton.setAttribute("id", `answer${i}`)
             answerButton.innerText = this.currentQuestionSet.decodedAnswer(answer);
-            answerButton.addEventListener("click", () => this.answerResult(answerButton.innerText));
+            answerButton.addEventListener("click", () => this.answerResult(answerButton));
             answersContainer.appendChild(answerButton);
             const hoverAudio = new Audio();
             hoverAudio.src = "../audio/click-for-game-menu-131903.mp3"
+            hoverAudio.playbackRate=1.5;
             answerButton.addEventListener("mouseover", function() {
             hoverAudio.play();
         });
@@ -130,12 +135,6 @@ export class Game {
                       <option value="32">Entertainment: Cartoon & Animation</option>
                     </select>
                     <br>
-                    <select name="difficulty" id="difficulty">
-                      <option value="easy">Easy</option>
-                      <option value="medium">Medium</option>
-                      <option value="hard">Hard</option>
-                    </select>
-                    <br>
                     <select name="amtQuestions" id="amtQuestions">
                       <option value="5">5</option>
                       <option value="6">6</option>
@@ -155,16 +154,23 @@ export class Game {
                       <option value="20">20</option>
                     </select>
                     <br>
+                    <select name="difficulty" id="difficulty">
+                      <option value="easy">Easy</option>
+                      <option value="medium">Medium</option>
+                      <option value="hard">Hard</option>
+                    </select>
+                    <br>
                     <button id="customStart">Start</button>
                     <button id="back">Main Menu</button>
                   </div>
                 </div>
-                <div id="randomFact">The Best Trivia Game in the World!</div>
+                <div id="randomFact">The Best Trivia Game in the World!
+                </div>
                 <div id="modalContainer">
-                    <div id="modal">
-                    Welcome to Brain Stew! <br>To play click the "Start Game" button or select "Custom Game" if you want to choose the category, number of questions, or difficulty that you want.
+                  <div id="modal">
                     <button id="closeModal">X</button>
-                    </div>
+                    Welcome to Brain Stew! <br>Brain Stew is a fun trivia styled game that offers users the opportunity to engage in an educational and entertaining quiz experience. Players can select their preferred categories, set the level of difficulty, and specify the number of questions they want to answer. <br> To play click the "Demo" button to start a demo game or select "Custom Game" if you want to customize your experience. <a href="https://github.com/KlodianB" id="githubLink"><img src="./icons8-github-50.png" id="github"></a>
+                  </div>
                 </div>`;
                 const modalContainer = document.getElementById("modalContainer");
                 modalContainer.style.display = "none";
@@ -234,6 +240,7 @@ export class Game {
                     for (let i = 0; i < buttons.length; i++) {
                         const hoverAudio = new Audio();
                         hoverAudio.src = "../audio/click-for-game-menu-131903.mp3"
+                        hoverAudio.playbackRate=1.5;
                         const clickAudio = new Audio();
                         clickAudio.src = "../audio/ping-82822.mp3"
                         clickAudio.playbackRate=2.5;
@@ -245,30 +252,40 @@ export class Game {
                             clickAudio.play();
                         });
                     };
-                    const closeModalButton = document.getElementById("closeModal");
-                    closeModalButton.removeEventListener("mouseover");
                 
             });
             main.appendChild(gameOver);
             main.appendChild(playAgain);
             main.appendChild(mainMenu);
             main.appendChild(wrongQuestions);
-    }
+    };
 
     answerResult(answer){
-        if (answer === this.currentQuestionSet.decodedRightAnswer()) {
+        const answerText = answer.innerText
+        const selectedButton = document.getElementById(answer.getAttribute("id"));
+        if (answerText === this.currentQuestionSet.decodedRightAnswer()) {
             this.score += 1;
             this.counter += 1;
+            selectedButton.classList.add("correct");
+            const correctAudio = new Audio();
+            correctAudio.src = "../audio/ui_correct_button2-103167.mp3"
+            correctAudio.play();
         }else {
             this.incorrectQuestions.push(this.currentQuestionSet.decodedQuestion())
             this.counter += 1;
             this.correctAnswers.push(this.currentQuestionSet.decodedAnswer(this.currentQuestionSet.rightAnswer));
-        }
+            selectedButton.classList.add("incorrect");
+            const incorrectAudio = new Audio();
+            incorrectAudio.src = "../audio/negative_beeps-6008.mp3"
+            incorrectAudio.play();
+        };
         this.nextQuestion();
-    }
+    };
 
 
-}
+
+
+};
 
 
 

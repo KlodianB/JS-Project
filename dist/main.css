@@ -6,6 +6,11 @@
   font-family: "Crayone Personal Use Only";
 }
 
+#body {
+  display: flex;
+  align-items: center;
+}
+
 #main {
   background-image: url(../wepik-export-20230829175803xrSI.png);
   position: relative;
@@ -21,7 +26,7 @@
 }
 
 #modalContainer {
-  display: block;
+  display: flex;
   position: fixed;
   z-index: 1;
   left: 0;
@@ -41,13 +46,20 @@
   border-radius: 25px;
   text-align: center;
   justify-content: center;
+  flex-direction: column;
   background-color: #fefefe;
-  margin: 25% auto;
+  margin: 15% auto;
   padding: 20px;
   border: 1px solid #888;
-  width: 30%;
-  height: 15%;
+  width: 45%;
+  height: 55%;
+  font-size: 25px;
   color: black;
+}
+
+#modal #closeModal {
+  display: flex;
+  align-self: flex-end;
 }
 
 @keyframes fadeOut {
@@ -313,6 +325,14 @@
   cursor: pointer;
 }
 
+#headerContainer {
+  display: flex;
+  font-size: 20px;
+  justify-content: space-between;
+  width: 1100px;
+  margin-top: 50px;
+}
+
 #answersContainer button {
   transition: background-color 0.3s ease-in-out;
   background: linear-gradient(45deg, #AD264C, #FF90AF, #FA5080, #10AD23, #82FA91);
@@ -323,10 +343,25 @@
   transition: 0.5s ease;
 }
 
-#headerContainer {
-  display: flex;
-  font-size: 20px;
-  justify-content: space-between;
-  width: 1100px;
-  margin-top: 50px;
+#answersContainer button.correct {
+  background-color: #10AD23;
+  transform: scale(1.1);
+}
+
+#answersContainer button.incorrect {
+  background-color: #FA5080;
+  transform: scale(0.9);
+}
+
+#githubLink {
+  margin: auto;
+  height: 50px;
+  width: 50px;
+}
+
+#main #mute {
+  display: none;
+  align-self: flex-end;
+  margin-bottom: 20px;
+  margin-right: 20px;
 }

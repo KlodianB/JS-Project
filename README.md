@@ -1,5 +1,5 @@
 ## Background:
-The JavaScript Quiz Game is an interactive web application that offers users the opportunity to engage in an educational and entertaining quiz experience. Players can select their preferred categories, set the level of difficulty, and specify the number of questions they want to answer. The game aims to enhance users' knowledge and challenge their understanding of various subjects while providing an enjoyable gaming experience.
+Brain Stew is an interactive web application that offers users the opportunity to engage in an educational and entertaining quiz experience. Players can select their preferred categories, set the level of difficulty, and specify the number of questions they want to answer. The game aims to enhance users' knowledge and challenge their understanding of various subjects while providing an enjoyable gaming experience.
 
 
 
