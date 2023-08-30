@@ -94,10 +94,10 @@ document.addEventListener("DOMContentLoaded", function() {
     const buttons = document.getElementsByTagName("button");
     for (let i = 0; i < buttons.length; i++) {
         const hoverAudio = new Audio();
-        hoverAudio.src = "../audio/click-for-game-menu-131903.mp3"
+        hoverAudio.src = "./audio/click-for-game-menu-131903.mp3"
         hoverAudio.playbackRate=1.5;
         const clickAudio = new Audio();
-        clickAudio.src = "../audio/ping-82822.mp3"
+        clickAudio.src = "./audio/ping-82822.mp3"
         clickAudio.playbackRate=2.5;
         const button = buttons[i];
         button.addEventListener("mouseover", function() {

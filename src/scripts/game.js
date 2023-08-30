@@ -60,7 +60,7 @@ export class Game {
             answerButton.addEventListener("click", () => this.answerResult(answerButton));
             answersContainer.appendChild(answerButton);
             const hoverAudio = new Audio();
-            hoverAudio.src = "../audio/click-for-game-menu-131903.mp3"
+            hoverAudio.src = "./audio/click-for-game-menu-131903.mp3"
             hoverAudio.playbackRate=1.5;
             answerButton.addEventListener("mouseover", function() {
             hoverAudio.play();
@@ -239,10 +239,10 @@ export class Game {
                     const buttons = document.getElementsByTagName("button");
                     for (let i = 0; i < buttons.length; i++) {
                         const hoverAudio = new Audio();
-                        hoverAudio.src = "../audio/click-for-game-menu-131903.mp3"
+                        hoverAudio.src = "./audio/click-for-game-menu-131903.mp3"
                         hoverAudio.playbackRate=1.5;
                         const clickAudio = new Audio();
-                        clickAudio.src = "../audio/ping-82822.mp3"
+                        clickAudio.src = "./audio/ping-82822.mp3"
                         clickAudio.playbackRate=2.5;
                         const button = buttons[i];
                         button.addEventListener("mouseover", function() {
@@ -268,7 +268,7 @@ export class Game {
             this.counter += 1;
             selectedButton.classList.add("correct");
             const correctAudio = new Audio();
-            correctAudio.src = "../audio/ui_correct_button2-103167.mp3"
+            correctAudio.src = "./audio/ui_correct_button2-103167.mp3"
             correctAudio.play();
         }else {
             this.incorrectQuestions.push(this.currentQuestionSet.decodedQuestion())
@@ -276,7 +276,7 @@ export class Game {
             this.correctAnswers.push(this.currentQuestionSet.decodedAnswer(this.currentQuestionSet.rightAnswer));
             selectedButton.classList.add("incorrect");
             const incorrectAudio = new Audio();
-            incorrectAudio.src = "../audio/negative_beeps-6008.mp3"
+            incorrectAudio.src = "./audio/negative_beeps-6008.mp3"
             incorrectAudio.play();
         };
         this.nextQuestion();
