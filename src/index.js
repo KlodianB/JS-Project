@@ -85,14 +85,11 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 
-    // setInterval(() => {
-    //     fetchRandomFact();
-    // }, 7500);
+    setInterval(() => {
+        fetchRandomFact();
+    }, 7500);
 
 
-    
-    
-    
     
     const buttons = document.getElementsByTagName("button");
     for (let i = 0; i < buttons.length; i++) {

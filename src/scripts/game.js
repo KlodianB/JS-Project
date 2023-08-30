@@ -229,9 +229,9 @@ export class Game {
                         fetchQuestions(window.numQuestions, window.difficulty, window.cat);
                     });
 
-                    // setInterval(() => {
-                    //     fetchRandomFact();
-                    // }, 7500);
+                    setInterval(() => {
+                        fetchRandomFact();
+                    }, 7500);
 
 
 
@@ -281,9 +281,6 @@ export class Game {
         };
         this.nextQuestion();
     };
-
-
-
 
 };
 
