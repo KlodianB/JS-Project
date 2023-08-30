@@ -59,6 +59,9 @@ document.addEventListener("DOMContentLoaded", function() {
             modalContainer.style.display = "none" 
         }, 500);
         modalContainer.style.animation = "fadeOut 0.7s";
+        const music = document.getElementById("music");
+        music.loop = true;
+        music.play();
     });
 
     const customGame = document.getElementById("customGame");
@@ -109,9 +112,6 @@ document.addEventListener("DOMContentLoaded", function() {
     };
 
 
-    const music = document.getElementById("music");
-    music.loop = true;
-    music.play();
 
     function mute(el) {
         el.muted = !el.muted;
